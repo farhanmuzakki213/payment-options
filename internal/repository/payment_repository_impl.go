@@ -12,7 +12,7 @@ func NewPaymentRepo() PaymentRepository {
 }
 
 func (r *paymentRepo) CallDanamon() models.PaymentMethod {
-	
+	time.Sleep(1 * time.Second)
 	return models.PaymentMethod{
 		Account: "7890123456",
 		Status:  "Active",
@@ -22,7 +22,7 @@ func (r *paymentRepo) CallDanamon() models.PaymentMethod {
 }
 
 func (r *paymentRepo) CallBTN() models.PaymentMethod {
-	
+	time.Sleep(1 * time.Second)
 	return models.PaymentMethod{
 		Account: "8901234567",
 		Status:  "Active",
@@ -32,7 +32,7 @@ func (r *paymentRepo) CallBTN() models.PaymentMethod {
 }
 
 func (r *paymentRepo) CallBSI() models.PaymentMethod {
-	
+	time.Sleep(1 * time.Second)
 	return models.PaymentMethod{
 		Account: "9012345678",
 		Status:  "Active",
@@ -42,7 +42,7 @@ func (r *paymentRepo) CallBSI() models.PaymentMethod {
 }
 
 func (r *paymentRepo) CallMega() models.PaymentMethod {
-	
+	time.Sleep(1 * time.Second)
 	return models.PaymentMethod{
 		Account: "0123456789",
 		Status:  "Active",
@@ -52,7 +52,7 @@ func (r *paymentRepo) CallMega() models.PaymentMethod {
 }
 
 func (r *paymentRepo) CallOCBC() models.PaymentMethod {
-	
+	time.Sleep(1 * time.Second)
 	return models.PaymentMethod{
 		Account: "1123456789",
 		Status:  "Active",
@@ -62,7 +62,7 @@ func (r *paymentRepo) CallOCBC() models.PaymentMethod {
 }
 
 func (r *paymentRepo) CallMaybank() models.PaymentMethod {
-	
+	time.Sleep(1 * time.Second)
 	return models.PaymentMethod{
 		Account: "1223456789",
 		Status:  "Active",

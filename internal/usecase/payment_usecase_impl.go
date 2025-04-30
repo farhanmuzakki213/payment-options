@@ -3,7 +3,7 @@ package usecase
 import (
 	"payment-options/internal/models"
 	"payment-options/internal/repository"
-	"sync"
+	/* "sync" */
 )
 
 type paymentUsecase struct {
@@ -15,7 +15,7 @@ func NewPaymentUsecase(r repository.PaymentRepository) PaymentUsecase {
 }
 
 func (u *paymentUsecase) GetPaymentOptions() (map[string]models.PaymentMethod, error) {
-	var wg sync.WaitGroup
+	/* var wg sync.WaitGroup
 	result := make(map[string]models.PaymentMethod)
 	mu := sync.Mutex{}
 
@@ -69,6 +69,14 @@ func (u *paymentUsecase) GetPaymentOptions() (map[string]models.PaymentMethod, e
 		mu.Unlock()
 	}()
 
-	wg.Wait()
+	wg.Wait() */
+	result := make(map[string]models.PaymentMethod)
+
+	result["danamon"] = u.repo.CallDanamon()
+	result["btn"] = u.repo.CallBTN()
+	result["bsi"] = u.repo.CallBSI()
+	result["mega"] = u.repo.CallMega()
+	result["ocbc"] = u.repo.CallOCBC()
+	result["maybank"] = u.repo.CallMaybank()
 	return result, nil
 }
